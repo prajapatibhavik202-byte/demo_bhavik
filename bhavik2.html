@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .profile-card {
+      width: 320px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .photo-holder {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6c63ff, #8f94fb);
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+    }
+
+    .bio-lines {
+      margin: 12px 0 20px;
+      color: #5a5a5a;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .details {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .details h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .details ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .details li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="photo-holder">Photo</div>
+    <h1 class="name">Your Naam</h1>
+    <div class="bio-lines" id="bio-lines">
+      <p>I am a creative person who enjoys making clean designs.</p>
+      <p>I love learning new skills and building useful projects.</p>
+    </div>
+    <div class="details" id="details"></div>
+  </div>
+
+  <script>
+    const profileDetails = {
+      contact: {
+        phone: '+123 456 7890',
+        email: 'naam@example.com'
+      },
+      hobbies: ['Reading', 'Traveling', 'Coding'],
+      other: 'I also enjoy music, photography, and learning new languages.'
+    };
+
+    const detailsElement = document.getElementById('details');
+    const detailsHtml = `
+      <h3>Contact</h3>
+      <ul>
+        <li>Phone: ${profileDetails.contact.phone}</li>
+        <li>Email: ${profileDetails.contact.email}</li>
+      </ul>
+      <h3>Hobbies</h3>
+      <ul>
+        ${profileDetails.hobbies.map(hobby => `<li>${hobby}</li>`).join('')}
+      </ul>
+      <h3>About</h3>
+      <p>${profileDetails.other}</p>
+    `;
+
+    detailsElement.innerHTML = detailsHtml;
+  </script>
+</body>
+</html>
